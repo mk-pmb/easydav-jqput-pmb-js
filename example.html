@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>EasyDAV jQput</title>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <style type="text/css">
+    @import url(../../node_modules/easydav-jqput-pmb/jqput.css);
+    form {
+      min-height: 90vh;
+      border: 2px dashed silver;
+      padding: 1ex;
+    }
+  </style>
+</head><body>
+
+<form action="x-nope://" class="easydav-jqput" target="_blank">
+
+  <input type="file" name="file_blob" class="reset-form"><!--
+    If it has the "reset-form" class, the form will be reset
+    after a file is selected. -->
+
+  <input type="hidden" name="dest_prefix"
+    value="/dav/uploads/"><!--
+    URL prefix for uploads. empty = same dir as this HTML. -->
+
+  <input type="hidden" name="dest_user"
+    value="">
+  <input type="hidden" name="dest_pass"
+    value=""><!--
+    If any of dest_user and dest_pass is non-empty, send the the AJAX request
+    with an HTTP login. If you need both to be empty, that's not supported,
+    but you can try adding an "Authorization: Basic Og==" header. -->
+
+  <input type="hidden" name="dest_headers" value="
+    X-Upload-Tool:    easydav-jqput-pmb
+    X-Foo-Bar:        qux
+    # I'm a line comment.
+    X-Caveats: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader
+    "><!--
+    Add custom headers to your AJAX request. Read about the caveats. -->
+  <ul class="uploads">
+    <li class="file err">
+      <span class="status">405 Method Not Allowed</span>
+      <span class="orig-fn">dummy.txt</span>
+      &rarr; <a class="dest-fn" href="#">0000.dummy.txt</a></li>
+    <li class="file wip">
+      <span class="status"><progress min="0" max="10" value="3"
+        >30.00%</progress></span>
+      <span class="orig-fn">dummy.txt</span>
+      &rarr; <a class="dest-fn" href="#">0000.dummy.txt</a></li>
+    <li class="file sxs"><span class="status">201 Created</span>
+      <span class="orig-fn">dummy.txt</span>
+      &rarr; <a class="dest-fn" href="#">0000.dummy.txt</a></li>
+  </ul>
+</form>
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../node_modules/easydav-jqput-pmb/jqput.js"></script>
+
+</body></html>

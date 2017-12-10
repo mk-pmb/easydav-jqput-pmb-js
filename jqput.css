@@ -1,0 +1,22 @@
+﻿@charset "UTF-8";
+/* -*- coding: UTF-8, tab-width: 2 -*- */
+
+.easydav-jqput .uploads {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.easydav-jqput .uploads li { margin-top: 0.5ex; }
+.easydav-jqput .uploads .status progress { width: 10em; }
+
+.easydav-jqput .uploads .status {
+  padding: 0 0.5ex;
+  border: 1px solid silver;
+}
+
+.easydav-jqput .uploads a { text-decoration: none; }
+.easydav-jqput .uploads .wip .status { border-color: transparent; }
+.easydav-jqput .uploads .err .status { border-color: red; color: red; }
+.easydav-jqput .uploads .sxs .status { border-color: green; color: green; }
+
