@@ -9,13 +9,14 @@
   function saneFn(fn) {
     return (fn.match(/[A-Za-z0-9\-\.]+/g) || []).join('_'
       ).replace(/[_\.]*(\.)[_\.]*/g, '$1'
+      ).replace(/(\.jp)(g(?:\.|$))/g, '$1e$2'
       ).replace(/^[_\.]+/, '').replace(/[_\.]+$/, '');
   }
 
   function makeDestFn(fileMeta) {
     var isoNow = (new Date()).toISOString().replace(/\D/g, '').substr(2, 12);
-    return (isoNow.slice(0, 6) + '-' + isoNow.slice(-6) + '.' +
-      Math.random().toString(36).replace(/^0?\./, '').slice(-8) + '.' +
+    return (isoNow.slice(0, 6) + '-' + isoNow.slice(-4) + '.' +
+      Math.random().toString(36).replace(/^0?\./, '').slice(-6) + '.' +
       saneFn(String(fileMeta.name).toLowerCase()));
   }
 
@@ -69,6 +70,7 @@
 
     function onProgress(bytes) {
       var pb = li.progressBar;
+      if (!pb) { return; }
       pb.value = bytes;
       pb.innerHTML = ((100 * bytes) / fileSize).toFixed(2) + '%';
     }
@@ -77,6 +79,7 @@
       var httpStatus = (+xhr.status || 0),
         success = ((httpStatus >= 200) && (httpStatus < 300));
       logEvent(evt);
+      li.progressBar = false;
       li.status.text(httpStatus + ' ' + xhr.statusText);
       jqLi.removeClass('wip').addClass(success ? 'sxs' : 'err');
     }

@@ -1,0 +1,9 @@
+﻿
+* form reset cls
+* custom callbacks (event handlers, filename sanit) on form?
+* do we really need jQuery, now that it turned out useless
+  for the XHR parts?
+* unref file object on success?
+* abort
+* retry
+
