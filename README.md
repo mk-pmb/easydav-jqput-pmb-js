@@ -5,8 +5,16 @@ easydav-jqput-pmb
 <!--/#echo -->
 
 <!--#echo json="package.json" key="description" -->
-Simple web form that uses jQuery to PUT file uploads onto my WebDAV server.
+Simple web form and uploader to PUT files onto my WebDAV server.
 <!--/#echo -->
+
+
+I chose the package name and started building the form with jQuery
+because I assumed it would help me with the XHR part, as it usually does.
+Unfortunately I couldn't find a way to send a raw file blob
+with jQuery's XHR yet.
+For now the upload function uses the rather verbose plain JS API,
+which works but makes the name a bit misleading.
 
 
 Usage

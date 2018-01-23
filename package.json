@@ -1,7 +1,7 @@
 { "name": "easydav-jqput-pmb",
-  "version": "1.0.1",
-  "description": "Simple web form that uses jQuery to PUT file uploads onto my WebDAV server.",
-  "keywords": [ "jquery", "upload", "put" ],
+  "version": "1.0.2",
+  "description": "Simple web form and uploader to PUT files onto my WebDAV server.",
+  "keywords": [ "upload", "put" ],
 
   "author": "M.K. (https://github.com/mk-pmb)",
   "homepage": "https://github.com/mk-pmb/easydav-jqput-pmb-js/#readme",
