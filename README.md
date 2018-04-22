@@ -17,6 +17,13 @@ For now the upload function uses the rather verbose plain JS API,
 which works but makes the name a bit misleading.
 
 
+Live Demo
+---------
+
+… [of the UI](https://mk-pmb.github.io/easydav-jqput-pmb-js/example.ghp.html)
+– GitHub pages won't accept your file uploads.
+
+
 Usage
 -----
 
