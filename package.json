@@ -1,5 +1,5 @@
 { "name": "easydav-jqput-pmb",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple web form and uploader to PUT files onto my WebDAV server.",
   "keywords": [ "upload", "put" ],
 
